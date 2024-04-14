@@ -28,6 +28,9 @@ jobs:
       MIGRATE_DST_PROJECT: ${{ secrets.MIGRATE_DST_PROJECT }}
       MIGRATE_SRC_INSTANCE: ${{ secrets.MIGRATE_SRC_INSTANCE }}
       MIGRATE_SRC_PROJECT: ${{ secrets.MIGRATE_SRC_PROJECT }}
+
+      WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
+      WORKLOAD_IDENTITY_SERVICE_ACCOUNT: ${{ secrets.WORKLOAD_IDENTITY_SERVICE_ACCOUNT }}
     steps:
       - uses: actions/checkout@v4
       - name: Setup Go
