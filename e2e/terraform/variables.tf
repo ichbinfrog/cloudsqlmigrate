@@ -4,6 +4,11 @@ variable "billing_account_id" {
   sensitive   = true
 }
 
+variable "enabled_github_infra" {
+  description = "Whether or not to provision infrastructure for e2e tests"
+  type        = bool
+}
+
 variable "github_username" {
   description = "Github username"
   type        = string
