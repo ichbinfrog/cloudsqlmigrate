@@ -23,6 +23,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: unit
     if: github.ref == 'refs/heads/main'
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
     env:
       MIGRATE_DST_INSTANCE: ${{ secrets.MIGRATE_DST_INSTANCE }}
       MIGRATE_DST_PROJECT: ${{ secrets.MIGRATE_DST_PROJECT }}
