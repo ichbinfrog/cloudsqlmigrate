@@ -1,6 +1,6 @@
 # CloudSQL Migration utility
 
-A tool for quickly migrating CloudSQL instances to each other. 
+**A tool for quickly migrating CloudSQL instances to each other.**
 
 To run a migration, simply run:
 
@@ -23,11 +23,16 @@ This approach is favorable the classic [sql export-import](https://cloud.google.
 
 - It's much **faster** :zap:. The time to create and restore snapshots are quite well optimized is inversely proportional to the instance's resources.
 
-- Users with their credentials, database schemas, permissions, extensions are preserved and transferred without issue from the source to the target instance.
+- It's **safer** :lock: as data does not persist on a temporary bucket but on snapshots that are best practices to have anyways. On top of that, users with their credentials, database schemas, permissions, extensions are preserved and transferred without issue from the source to the target instance.
 
-- Not having to deal with the complexities of dumping and importing SQL (e.g. extension, user permission and other issues that arises from the lack of control of the dump generated)
+- It's **simpler** :baby:; Not having to deal with the complexities of dumping and importing SQL (e.g. extension, user permission and other issues that arises from the lack of control of the dump generated)
 
 - Does not stress the source instance if [automated backups](https://cloud.google.com/sql/docs/mysql/backup-recovery/backing-up#set-retention) is enabled. The latter is incremental thus generating a new snapshot from the last point in time is significantly faster and less resource intensive than performing an sql dump.
 
-
 ## Getting started
+
+Build your and install own binary with:
+
+```console
+go install github.com/ichbinfrog/cloudsqlmigrate
+```
